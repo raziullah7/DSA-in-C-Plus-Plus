@@ -8,15 +8,22 @@ private:
     int radius;
 
 public:
-    /*Circle(int r);
+    /*
+    Circle(int r);
     ~Circle();
     int getRadius();
     void setRadius(int r);
-    int Area();*/
+    int Area();
+    */
 
     // constructor
     Circle(int r) {
         radius = r;
+    }
+
+    // copy constructor
+    Circle(Circle& anotherCircle) {
+        radius = anotherCircle.radius;
     }
 
     // destructor
@@ -74,6 +81,9 @@ int Circle::Area() {
 int main() {
     Circle myCircle(5);
     cout << "Area : " << myCircle.Area() << endl;
-    cout << "Radius : " << myCircle.getRadius();
+    cout << "Radius : " << myCircle.getRadius() << endl;
+    Circle anotherCircle(6);
+    Circle testCircle(anotherCircle);
+    cout << "Radius : " << testCircle.getRadius();
     return 0;
 }
