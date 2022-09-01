@@ -21,6 +21,7 @@ int main() {
         c = Division(a, b);
         cout << "Result of division : " << c << endl;
     }
+    // "catch(...)" is called Ellipses, which catches all kinds of exceptions
     catch (MyException) {
         cout << "Error : Division by zero\n";
     }
