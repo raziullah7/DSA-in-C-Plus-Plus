@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Changing Array Size", "Changing Array Size.vcxproj", "{CC3468B1-063C-4EA4-A6BE-0394DFE56291}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC3468B1-063C-4EA4-A6BE-0394DFE56291}.Debug|x64.ActiveCfg = Debug|x64
+		{CC3468B1-063C-4EA4-A6BE-0394DFE56291}.Debug|x64.Build.0 = Debug|x64
+		{CC3468B1-063C-4EA4-A6BE-0394DFE56291}.Debug|x86.ActiveCfg = Debug|Win32
+		{CC3468B1-063C-4EA4-A6BE-0394DFE56291}.Debug|x86.Build.0 = Debug|Win32
+		{CC3468B1-063C-4EA4-A6BE-0394DFE56291}.Release|x64.ActiveCfg = Release|x64
+		{CC3468B1-063C-4EA4-A6BE-0394DFE56291}.Release|x64.Build.0 = Release|x64
+		{CC3468B1-063C-4EA4-A6BE-0394DFE56291}.Release|x86.ActiveCfg = Release|Win32
+		{CC3468B1-063C-4EA4-A6BE-0394DFE56291}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7585A9DD-D258-4F17-A430-D3D5478FF266}
+	EndGlobalSection
+EndGlobal
