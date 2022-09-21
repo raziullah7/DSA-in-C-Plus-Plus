@@ -31,7 +31,7 @@ private:
 public:
     ArrayADT(int initialCap = 10);
     ~ArrayADT();
-    void Insert(int pos, T elem);
+    void Insert(int position, T element);
     void Delete(int pos, T& elem);
     bool Find(int pos, T& elem);
     int Search(T);
