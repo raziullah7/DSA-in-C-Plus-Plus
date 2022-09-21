@@ -1,3 +1,5 @@
+// the main function is also known as application function
+
 #include "Array1D.h"
 
 int main() {
