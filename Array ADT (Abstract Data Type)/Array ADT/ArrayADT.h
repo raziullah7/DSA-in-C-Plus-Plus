@@ -1,11 +1,33 @@
 #pragma once
 
+#include <iostream>
+using namespace std;
+
+// a user-defined exception class specifically for ArrayADT
+class IllegalParameterValue {
+private:
+    string message;
+
+public:
+    // constructor
+    IllegalParameterValue(string msg) {
+        message = msg;
+    }
+    // output method
+    void outputMessage() {
+        cout << message << endl;
+    }
+};
+
+
+// using class template for generics, which makes ArrayADT a template class
 template<class T>
 class ArrayADT {
 private:
     T* Arr;
     int Capacity;
     int Size;
+
 public:
     ArrayADT(int initialCap = 10);
     ~ArrayADT();
