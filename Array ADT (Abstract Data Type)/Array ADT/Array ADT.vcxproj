@@ -135,6 +135,9 @@
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="Find.cpp" />
     <ClCompile Include="Insert.cpp" />
+    <ClCompile Include="IsEmpty.cpp" />
+    <ClCompile Include="IsFull.cpp" />
+    <ClCompile Include="Length.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Search.cpp" />
   </ItemGroup>

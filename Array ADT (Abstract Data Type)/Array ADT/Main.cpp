@@ -7,6 +7,9 @@
 #include "Delete.cpp"
 #include "Find.cpp"
 #include "Search.cpp"
+#include "Length.cpp"
+#include "IsEmpty.cpp"
+#include "IsFull.cpp"
 //#include <iostream>
 
 int main() {
@@ -28,8 +31,13 @@ int main() {
 		int foundValueHolder;
 		cout << "Element Found : " <<(bool) myArray.Find(6, foundValueHolder) << endl;
 
-		cout << "Position : " << myArray.Search(269);
+		cout << "Position : " << myArray.Search(269) << endl;
+			
+		cout << "Length of Array : " << myArray.Length() << endl;
 
+		cout << "Array is Empty : " << myArray.IsEmpty() << endl;
+
+		cout << "Array is Full : " << myArray.IsFull() << endl;
 	}
 	catch (IllegalParameterValue e) {
 		e.outputMessage();
