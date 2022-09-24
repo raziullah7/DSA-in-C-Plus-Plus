@@ -10,6 +10,9 @@
 #include "Length.cpp"
 #include "IsEmpty.cpp"
 #include "IsFull.cpp"
+#include "Get.cpp"
+#include "Set.cpp"
+#include "IndexOf.cpp"
 //#include <iostream>
 
 int main() {
@@ -26,6 +29,7 @@ int main() {
 		/*int delValueHolder;
 		myArray.Delete(5, delValueHolder);*/
 
+		/*
 		myArray.Display();
 
 		int foundValueHolder;
@@ -38,6 +42,13 @@ int main() {
 		cout << "Array is Empty : " << myArray.IsEmpty() << endl;
 
 		cout << "Array is Full : " << myArray.IsFull() << endl;
+		*/
+
+		myArray.Set(3, 619);
+		cout << myArray.Get(3) << endl;
+
+		cout << myArray.IndexOf(6);
+
 	}
 	catch (IllegalParameterValue e) {
 		e.outputMessage();

@@ -50,5 +50,14 @@
     <ClCompile Include="IsFull.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Get.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Set.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexOf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

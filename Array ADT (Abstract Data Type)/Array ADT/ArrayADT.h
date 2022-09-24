@@ -40,6 +40,6 @@ public:
     bool IsEmpty();
     bool IsFull();
     T Get(int index);
-    void Set(int index, T);
-    int indexOf(T);
+    void Set(int index, T element);
+    int IndexOf(T);
 };

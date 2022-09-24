@@ -134,12 +134,15 @@
     <ClCompile Include="Delete.cpp" />
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="Find.cpp" />
+    <ClCompile Include="Get.cpp" />
+    <ClCompile Include="IndexOf.cpp" />
     <ClCompile Include="Insert.cpp" />
     <ClCompile Include="IsEmpty.cpp" />
     <ClCompile Include="IsFull.cpp" />
     <ClCompile Include="Length.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Search.cpp" />
+    <ClCompile Include="Set.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
