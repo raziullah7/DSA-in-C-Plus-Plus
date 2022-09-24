@@ -4,6 +4,7 @@
 #include "ArrayADT.cpp";
 #include "Insert.cpp"
 #include "Display.cpp"
+#include "Delete.cpp"
 //#include <iostream>
 
 int main() {
@@ -13,6 +14,12 @@ int main() {
 		myArray.Insert(2, 50);
 		myArray.Insert(3, 40);
 		myArray.Insert(2, 30);
+		myArray.Insert(5, 69);
+		myArray.Insert(6, 169);
+		myArray.Insert(7, 269);
+
+		int delValueHolder;
+		myArray.Delete(5, delValueHolder);
 
 		myArray.Display();
 	}

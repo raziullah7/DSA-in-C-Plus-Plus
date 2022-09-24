@@ -32,5 +32,8 @@
     <ClCompile Include="Display.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Delete.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

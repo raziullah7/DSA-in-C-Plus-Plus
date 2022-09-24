@@ -32,8 +32,8 @@ public:
     ArrayADT(int initialCap = 10);
     ~ArrayADT();
     void Insert(int position, T element);
-    void Delete(int pos, T& elem);
-    bool Find(int pos, T& elem);
+    void Delete(int position, T& element);
+    bool Find(int position, T& element);
     int Search(T);
     int Length();
     void Display();

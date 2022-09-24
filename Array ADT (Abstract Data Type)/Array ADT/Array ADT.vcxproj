@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArrayADT.cpp" />
+    <ClCompile Include="Delete.cpp" />
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="Insert.cpp" />
     <ClCompile Include="Main.cpp" />
