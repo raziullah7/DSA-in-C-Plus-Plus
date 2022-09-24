@@ -133,8 +133,10 @@
     <ClCompile Include="ArrayADT.cpp" />
     <ClCompile Include="Delete.cpp" />
     <ClCompile Include="Display.cpp" />
+    <ClCompile Include="Find.cpp" />
     <ClCompile Include="Insert.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Search.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

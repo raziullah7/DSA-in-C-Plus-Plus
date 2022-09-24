@@ -7,4 +7,5 @@ void ArrayADT<T> :: Display() {
 	for (int i = 0; i < Size; i++) {
 		cout << Arr[i] << ' ';
 	}
+	cout << endl;
 }

@@ -34,7 +34,7 @@ public:
     void Insert(int position, T element);
     void Delete(int position, T& element);
     bool Find(int position, T& element);
-    int Search(T);
+    int Search(T element);
     int Length();
     void Display();
     bool IsEmpty();

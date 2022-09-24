@@ -5,6 +5,8 @@
 #include "Insert.cpp"
 #include "Display.cpp"
 #include "Delete.cpp"
+#include "Find.cpp"
+#include "Search.cpp"
 //#include <iostream>
 
 int main() {
@@ -18,10 +20,16 @@ int main() {
 		myArray.Insert(6, 169);
 		myArray.Insert(7, 269);
 
-		int delValueHolder;
-		myArray.Delete(5, delValueHolder);
+		/*int delValueHolder;
+		myArray.Delete(5, delValueHolder);*/
 
 		myArray.Display();
+
+		int foundValueHolder;
+		cout << "Element Found : " <<(bool) myArray.Find(6, foundValueHolder) << endl;
+
+		cout << "Position : " << myArray.Search(269);
+
 	}
 	catch (IllegalParameterValue e) {
 		e.outputMessage();
