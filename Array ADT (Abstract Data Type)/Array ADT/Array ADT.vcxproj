@@ -130,10 +130,14 @@
     <ClInclude Include="ArrayADT.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Append.cpp" />
     <ClCompile Include="ArrayADT.cpp" />
+    <ClCompile Include="Average.cpp" />
     <ClCompile Include="Delete.cpp" />
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="Find.cpp" />
+    <ClCompile Include="FindMAX.cpp" />
+    <ClCompile Include="FindMIN.cpp" />
     <ClCompile Include="Get.cpp" />
     <ClCompile Include="IndexOf.cpp" />
     <ClCompile Include="Insert.cpp" />
@@ -143,6 +147,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Search.cpp" />
     <ClCompile Include="Set.cpp" />
+    <ClCompile Include="SumOfArray.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

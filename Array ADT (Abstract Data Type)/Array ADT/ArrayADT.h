@@ -42,4 +42,9 @@ public:
     T Get(int index);
     void Set(int index, T element);
     int IndexOf(T);
+    T FindMAX();
+    T FindMIN();
+    T SumOfArray();
+    T Average();
+    void Append(T);
 };

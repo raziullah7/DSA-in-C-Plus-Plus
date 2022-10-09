@@ -13,6 +13,11 @@
 #include "Get.cpp"
 #include "Set.cpp"
 #include "IndexOf.cpp"
+#include "FindMAX.cpp"
+#include "FindMIN.cpp"
+#include "SumOfArray.cpp"
+#include "Average.cpp"
+#include "Append.cpp"
 //#include <iostream>
 
 int main() {
@@ -47,8 +52,17 @@ int main() {
 		myArray.Set(3, 619);
 		cout << myArray.Get(3) << endl;
 
-		cout << myArray.IndexOf(6);
+		cout << myArray.IndexOf(6) << endl;
 
+		cout << myArray.FindMAX() << endl;
+
+		cout << "Smallest Element is " << myArray.FindMIN() << endl;
+		cout << "Sum of Elements is " << myArray.SumOfArray() << endl;
+		cout << "Avg of Elements is " << myArray.Average() << endl;
+
+		// append 100 at the end
+		myArray.Append(100);
+		myArray.Display();
 	}
 	catch (IllegalParameterValue e) {
 		e.outputMessage();
