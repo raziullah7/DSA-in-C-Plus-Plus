@@ -143,8 +143,10 @@
     <ClCompile Include="Insert.cpp" />
     <ClCompile Include="IsEmpty.cpp" />
     <ClCompile Include="IsFull.cpp" />
+    <ClCompile Include="LeftRotate.cpp" />
     <ClCompile Include="Length.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="RightRotate.cpp" />
     <ClCompile Include="Search.cpp" />
     <ClCompile Include="Set.cpp" />
     <ClCompile Include="SumOfArray.cpp" />

@@ -47,4 +47,8 @@ public:
     T SumOfArray();
     T Average();
     void Append(T);
+    void LeftRotateByOnePosition();
+    void LeftRotate(int k);
+    void RightRotateByOnePosition();
+    void RightRotate(int k);
 };

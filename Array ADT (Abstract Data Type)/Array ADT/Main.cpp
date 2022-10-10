@@ -18,6 +18,8 @@
 #include "SumOfArray.cpp"
 #include "Average.cpp"
 #include "Append.cpp"
+#include "RightRotate.cpp"
+#include "LeftRotate.cpp"
 //#include <iostream>
 
 int main() {
@@ -62,6 +64,9 @@ int main() {
 
 		// append 100 at the end
 		myArray.Append(100);
+		myArray.Display();
+
+		myArray.RightRotateByOnePosition();
 		myArray.Display();
 	}
 	catch (IllegalParameterValue e) {
