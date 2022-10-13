@@ -146,6 +146,7 @@
     <ClCompile Include="LeftRotate.cpp" />
     <ClCompile Include="Length.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Reverse.cpp" />
     <ClCompile Include="RightRotate.cpp" />
     <ClCompile Include="Search.cpp" />
     <ClCompile Include="Set.cpp" />

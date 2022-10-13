@@ -51,4 +51,5 @@ public:
     void LeftRotate(int k);
     void RightRotateByOnePosition();
     void RightRotate(int k);
+    void Reverse();
 };

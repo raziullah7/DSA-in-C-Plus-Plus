@@ -20,6 +20,7 @@
 #include "Append.cpp"
 #include "RightRotate.cpp"
 #include "LeftRotate.cpp"
+#include "Reverse.cpp"
 //#include <iostream>
 
 int main() {
@@ -63,10 +64,20 @@ int main() {
 		cout << "Avg of Elements is " << myArray.Average() << endl;
 
 		// append 100 at the end
+		cout << "Appending '100' : ";
 		myArray.Append(100);
 		myArray.Display();
 
+		cout << "Rotating Right by One : ";
 		myArray.RightRotateByOnePosition();
+		myArray.Display();
+
+		cout << "Before Reverse : ";
+		myArray.Display();
+
+		myArray.Reverse();
+
+		cout << "After Reverse : ";
 		myArray.Display();
 	}
 	catch (IllegalParameterValue e) {
