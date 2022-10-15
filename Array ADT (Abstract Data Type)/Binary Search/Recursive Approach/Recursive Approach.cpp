@@ -22,17 +22,18 @@ public:
         n = size;
     }
 
-    int BinarySearchint(int low, int high, T key) {
+    int BinarySearch(int low, int high, T key) {
         if (low <= high) {
+            int mid = (low + high) / 2;
             if (key == Arr[mid]) {
                 Display(mid);
                 return mid;
             }
             else if (key > Arr[mid]) {
-                return RecursiveBinarySearch(mid + 1, high, key);
+                return BinarySearch(mid + 1, high, key);
             }
             else
-                return RecursiveBinarySearch(low, mid - 1, key);
+                return BinarySearch(low, mid - 1, key);
         }
         Display(-1);
         return -1;
@@ -44,7 +45,7 @@ int main() {
     RecursiveBinarySearch<int> mySearch(size);
     cout << "Enter Key to be Searched : ";
     cin >> key;
-    // mySearch.BinarySearch(low, high, key);
+    mySearch.BinarySearch(low, high, key);
 
     return 0;
 }
