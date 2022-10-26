@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Chain.cpp" />
+    <ClCompile Include="Implementations.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Singly LinkedList ADT.cpp" />
   </ItemGroup>
