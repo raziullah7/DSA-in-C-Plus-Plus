@@ -72,4 +72,69 @@ void Chain<T> :: Display() {
 		// moving on to the next item
 		temp = temp->link;
 	}
+	cout << endl;
+}
+
+//------------------------------------------------------
+// Display function
+template <class T>
+void Chain<T> :: Delete(int position, T& element) {
+	//	checking if list is empty or not
+	if (first == NULL) {
+		cout << "List is empty\n";
+		return;
+	}
+
+	// list is not empty
+	else {
+		// for traversing list and returning element
+		Node<T>* p = first, * q;
+
+		// first position
+		if (position == 1) {
+			first = first->link;
+			element = p->data;
+			delete p;
+		}
+
+		// last position
+		else if (position == len) {
+			// traversing p to element right before the
+			// element to be deleted
+			for (int i = 0; i < position - 2; i++) {
+				p = p->link;
+			}
+			// assigning q to last element
+			q = p->link;
+			// retrieving value of last node
+			element = q->data;
+			// shifting last to one previous node
+			last = p;
+			// deleting the formar last node
+			delete q;
+			// updating last node's link
+			p->link = NULL;
+		}
+
+		// middle position(s)
+		else {
+			q = first;
+			// traversing to one node previous, to the node
+			// to be deleted
+			for (int i = 0; i < position - 2; i++) {
+				p = p->link;
+			}
+			// traversing to the node to be deleted
+			for (int i = 0; i < position - 1; i++) {
+				q = q->link;
+			}
+			// retrieving element
+			element = q->data;
+			// updating links to remove node from in between
+			p->link = q->link;
+			// deleting node
+			delete q;
+		}
+	}
+	len--;
 }
