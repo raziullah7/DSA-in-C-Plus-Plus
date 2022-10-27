@@ -14,5 +14,7 @@ int main() {
     myChain.Delete(3, deletedNode);
     cout << "Deleted Value : " << deletedNode << "\n";
 
+    myChain.Display();
+
     return 0;
 }

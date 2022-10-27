@@ -3,7 +3,7 @@
 //------------------------------------------------------
 // consturctor
 template <class T>
-Chain<T> ::Chain() {
+Chain<T> :: Chain() {
 	first = NULL;
 	last = NULL;
 	len = 0;
@@ -76,7 +76,7 @@ void Chain<T> :: Display() {
 }
 
 //------------------------------------------------------
-// Display function
+// Delete function
 template <class T>
 void Chain<T> :: Delete(int position, T& element) {
 	//	checking if list is empty or not
@@ -137,4 +137,21 @@ void Chain<T> :: Delete(int position, T& element) {
 		}
 	}
 	len--;
+}
+
+//------------------------------------------------------
+// Display function
+template <class T>
+bool Chain<T> ::Find (int position, T& element) {
+	// checking validity of the position
+	if (position < 1 || position > len) {
+		return false;
+	}
+	// traversig to get the element from the position
+	Node<T>* p = first;
+	for (int i = 0; i <= position; i++) {
+		p = p->link;
+	}
+	element = p->data;
+	return true;
 }
