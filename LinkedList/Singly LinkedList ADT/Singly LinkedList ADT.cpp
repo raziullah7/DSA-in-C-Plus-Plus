@@ -10,11 +10,14 @@ int main() {
     myChain.Insert(3, 619);
     myChain.Display();
 
-    int deletedNode = 0;
-    myChain.Delete(3, deletedNode);
-    cout << "Deleted Value : " << deletedNode << "\n";
+    int node = 619;
+    /*myChain.Delete(3, node);
+    cout << "Deleted Value : " << node << "\n";*/
 
-    myChain.Display();
+    // myChain.Display();
+
+    int x;
+    cout << "Element Found : " << myChain.Find(2, x) << endl;
 
     return 0;
 }

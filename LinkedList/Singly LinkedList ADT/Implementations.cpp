@@ -3,7 +3,7 @@
 //------------------------------------------------------
 // consturctor
 template <class T>
-Chain<T> :: Chain() {
+Chain<T>::Chain() {
 	first = NULL;
 	last = NULL;
 	len = 0;
@@ -12,7 +12,7 @@ Chain<T> :: Chain() {
 //------------------------------------------------------
 // Insert function
 template <class T>
-void Chain<T> :: Insert(int position, T element) {
+void Chain<T>::Insert(int position, T element) {
 	// creating a node
 	Node<T>* temp;
 	temp = new Node<T>;
@@ -62,7 +62,7 @@ void Chain<T> :: Insert(int position, T element) {
 //------------------------------------------------------
 // Display function
 template <class T>
-void Chain<T> :: Display() {
+void Chain<T>::Display() {
 	// temp for traversing
 	Node<T>* temp = first;
 	// NULL means the link part of last pointer
@@ -78,7 +78,7 @@ void Chain<T> :: Display() {
 //------------------------------------------------------
 // Delete function
 template <class T>
-void Chain<T> :: Delete(int position, T& element) {
+void Chain<T>::Delete(int position, T& element) {
 	//	checking if list is empty or not
 	if (first == NULL) {
 		cout << "List is empty\n";
@@ -140,11 +140,12 @@ void Chain<T> :: Delete(int position, T& element) {
 }
 
 //------------------------------------------------------
-// Display function
+// Find function
 template <class T>
-bool Chain<T> ::Find (int position, T& element) {
+bool Chain<T>::Find (int position, T& element) {
 	// checking validity of the position
 	if (position < 1 || position > len) {
+		cout << "Invalid Position!\n";
 		return false;
 	}
 	// traversig to get the element from the position
@@ -153,5 +154,23 @@ bool Chain<T> ::Find (int position, T& element) {
 		p = p->link;
 	}
 	element = p->data;
+	cout << "Element at position " << position
+		<< " is " << element << endl;
 	return true;
+}
+
+
+//------------------------------------------------------
+// Search function
+template <class T>
+int Chain<T>::Search(T key) {
+	// simple linear search
+	Node<T>* ptr = first;
+	for (int i = 0; i < len; i++) {
+		if (ptr->data == key) {
+			return i + 1;	// successful search
+		}
+		ptr = ptr->link;
+	}
+	return -1;				// unsuccessful search
 }
