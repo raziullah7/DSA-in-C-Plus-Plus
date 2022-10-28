@@ -15,6 +15,6 @@ public:
 	int Search(T);
 	void Display();
 	int Length();
-	bool isEmpty();
-	bool isFull();
+	bool IsEmpty();
+	// bool IsFull();  (not relevent)
 };

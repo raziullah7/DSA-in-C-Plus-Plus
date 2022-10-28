@@ -159,7 +159,6 @@ bool Chain<T>::Find (int position, T& element) {
 	return true;
 }
 
-
 //------------------------------------------------------
 // Search function
 template <class T>
@@ -173,4 +172,18 @@ int Chain<T>::Search(T key) {
 		ptr = ptr->link;
 	}
 	return -1;				// unsuccessful search
+}
+
+//------------------------------------------------------
+// IsEmpty function
+template <class T>
+bool Chain<T>::IsEmpty() {
+	return first == NULL;
+}
+
+//------------------------------------------------------
+// Length function
+template <class T>
+int Chain<T>::Length() {
+	return len;
 }

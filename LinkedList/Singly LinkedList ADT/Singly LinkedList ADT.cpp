@@ -19,5 +19,7 @@ int main() {
     int x;
     cout << "Element Found : " << myChain.Find(2, x) << endl;
 
+    cout << "Position of 619 is : " << myChain.Search(619) << endl;
+
     return 0;
 }
