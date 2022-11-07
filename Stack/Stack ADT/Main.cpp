@@ -18,6 +18,6 @@ int main() {
 
 	x = st.IsFull();
 	cout << "Stack Full : " << x << endl;
-
+	
 	st.Display();
 }
