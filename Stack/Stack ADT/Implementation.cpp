@@ -56,3 +56,36 @@ int myStack<T>::search(T element) {
 	}
 	return -1;				// unsuccessful
 }
+
+// isEmpty function
+template <class T>
+bool myStack<T>::isEmpty() {
+	/*if (top == -1) {
+		return true;
+	}
+	else {
+		return false;
+	}*/
+	return (top == -1);
+}
+
+// isFull function
+template <class T>
+bool myStack<T>::isFull() {
+	/*if (top == size - 1) {
+		return true;
+	}
+	else {
+		return false;
+	}*/
+	return (top == size - 1);
+}
+
+// display function
+template <class T>
+void myStack<T>::display() {
+	for (int i = 0; i <= top; i++) {
+		cout << s[i] << " ";
+	}
+	cout << endl;
+}

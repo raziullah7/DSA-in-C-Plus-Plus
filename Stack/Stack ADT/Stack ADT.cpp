@@ -15,7 +15,8 @@ public:
 	bool isFull();
 	void push(T);
 	void pop(T&);
-	T TopElement();
+	int length() { return len; }
+	T topElement();
 	void display();
 	int search(T);
 	bool find(int, T&);
