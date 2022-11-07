@@ -3,19 +3,21 @@
 int main() {
 	int x;
 	myStack<int> st(6);
-	st.push(10);
-	st.push(20);
-	st.push(30);
-	st.push(40);
+	st.Push(10);
+	st.Push(20);
+	st.Push(30);
+	st.Push(40);
 
-	x = st.search(30);
+	x = st.Search(30);
 	cout << "Element Search : " << x << endl;
 
-	cout << "Stack Length : " << st.length() << endl;
+	cout << "Stack Length : " << st.Length() << endl;
 
-	x = st.isEmpty();
+	x = st.IsEmpty();
 	cout << "Stack Empty : " << x << endl;
 
-	x = st.isFull();
+	x = st.IsFull();
 	cout << "Stack Full : " << x << endl;
+
+	st.Display();
 }

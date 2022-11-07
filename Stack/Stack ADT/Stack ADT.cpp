@@ -11,13 +11,13 @@ private:
 public:
 	myStack(int cap);
 	~myStack() { delete[] s; }
-	bool isEmpty();
-	bool isFull();
-	void push(T);
-	void pop(T&);
-	int length() { return len; }
-	T topElement();
-	void display();
-	int search(T);
-	bool find(int, T&);
+	bool IsEmpty();
+	bool IsFull();
+	void Push(T);
+	void Pop(T&);
+	int Length() { return len; }
+	T TopElement();
+	void Display();
+	int Search(T);
+	bool Find(int, T&);
 };
