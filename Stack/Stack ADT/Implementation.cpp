@@ -34,3 +34,25 @@ void myStack<T>::pop(T &element) {
 	element = s[top--];
 	len--;
 }
+
+// find function
+template <class T>
+bool myStack<T>::find(int position, T& element) {
+	if (position < 1 || position > len + 1) {
+		cout << "Invalid Position!" << endl;
+		return false;
+	}
+	// position == index + 1 (position is normies language)
+	element = s[position - 1];
+	return true;
+}
+
+// search function (returns position)
+template <class T>
+int myStack<T>::search(T element) {
+	for (int i = 0; i <= top; i++) {
+		if (element == s[i])
+			return (i + 1); // successful
+	}
+	return -1;				// unsuccessful
+}

@@ -13,9 +13,10 @@ public:
 	~myStack() { delete[] s; }
 	bool isEmpty();
 	bool isFull();
-	void push(T x);
-	void pop(T& x);
+	void push(T);
+	void pop(T&);
 	T TopElement();
 	void display();
-	int search(T x);
+	int search(T);
+	bool find(int, T&);
 };
