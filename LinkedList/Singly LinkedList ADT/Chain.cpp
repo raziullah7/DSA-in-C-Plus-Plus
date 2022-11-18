@@ -8,7 +8,7 @@ private:
 
 public:
 	Chain();
-	~Chain() {}
+	~Chain();
 	void Insert(int, T);
 	void Delete(int, T&);
 	bool Find(int, T&);

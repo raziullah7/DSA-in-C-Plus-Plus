@@ -10,6 +10,18 @@ Chain<T>::Chain() {
 }
 
 //------------------------------------------------------
+// destructor
+template <class T>
+Chain<T>::~Chain() {
+	Node<T>* p = first;
+	while (p != NULL) {
+		first = first->link;
+		delete p;
+		p = first;
+	}
+}
+
+//------------------------------------------------------
 // Insert function
 template <class T>
 void Chain<T>::Insert(int position, T element) {
