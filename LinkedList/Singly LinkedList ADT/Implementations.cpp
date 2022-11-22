@@ -199,3 +199,28 @@ template <class T>
 int Chain<T>::Length() {
 	return len;
 }
+
+// Concatination of 2 LinkedLists
+template <class T>
+void Chain<T>::Concat(Chain<T>* chain1, Chain<T>* chain2) {
+	Node<T>* chain1Head = chain1->first;
+	Node<T>* chain2Head = chain2->first;
+	// traversing chain1 till last element
+	Node<T>* ptr = chain1Head;
+	while (ptr->link != NULL) {
+		ptr = ptr->link;
+	}
+	// assigning chain2Head to ptr's link part
+	// (which is pointing to last node)
+	// this connects the two chains
+	ptr->link = chain2Head;
+	chain2Head = NULL;
+
+	// printing in a chain like format
+	Node<T>* temp = chain1Head;
+	while (temp != NULL) {
+		cout << temp->data << "->";
+		temp = temp->link;
+	}
+	cout << endl;
+}

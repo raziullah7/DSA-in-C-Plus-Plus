@@ -17,4 +17,5 @@ public:
 	int Length();
 	bool IsEmpty();
 	// bool IsFull();  (not relevent)
+	void Concat(Chain<T>*, Chain<T>*);
 };
