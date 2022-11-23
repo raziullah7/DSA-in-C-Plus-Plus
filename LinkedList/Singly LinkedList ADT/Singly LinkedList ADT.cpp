@@ -31,7 +31,8 @@ int main() {
     Chain<int> myChain3;
     // myChain1.Concat(&myChain1, &myChain2);
 
-    myChain3.Merge(myChain1.first, myChain2.first);
+    // myChain3.Merge(myChain1.first, myChain2.first);
+    myChain3.Merge(&myChain1, &myChain2);
     myChain3.Display();
 
 

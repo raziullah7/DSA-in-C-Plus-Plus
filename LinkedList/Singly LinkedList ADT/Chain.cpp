@@ -2,10 +2,8 @@
 
 template <class T>
 class Chain {
-public:
-	Node<T>* first, * last;
-
 private:
+	Node<T>* first, * last;
 	int len;
 
 public:
@@ -20,5 +18,6 @@ public:
 	bool IsEmpty();
 	// bool IsFull();  (not relevent)
 	void Concat(Chain<T>*, Chain<T>*);
-	void Merge(Node<T>*, Node<T>*);
+	// void Merge(Node<T>*, Node<T>*);	// public access of *first
+	void Merge(Chain<T>*, Chain<T>*);	// private access of *first
 };
