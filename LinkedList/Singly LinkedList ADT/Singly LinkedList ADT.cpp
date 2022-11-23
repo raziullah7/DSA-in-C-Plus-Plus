@@ -35,6 +35,8 @@ int main() {
     myChain3.Merge(&myChain1, &myChain2);
     myChain3.Display();
 
+    myChain3.Reverse();
+    myChain3.Display();
 
     return 0;
 }
