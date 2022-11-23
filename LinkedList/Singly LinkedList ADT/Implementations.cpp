@@ -224,3 +224,43 @@ void Chain<T>::Concat(Chain<T>* chain1, Chain<T>* chain2) {
 	}
 	cout << endl;
 }
+
+// merge two sorted linkedlists
+template <class T>
+void Chain<T>::Merge(Node<T>* f, Node<T>* s) {
+	Node<T>* p;
+	// for determining the first element of the linkedlist
+	if (f->data < s->data) {
+		first = p = f;
+		f = f->link;
+	}
+	else {
+		first = p = s;
+		s = s->link;
+	}
+	first->link = NULL;
+	// traversing for rearranging pointers
+	// while (f != NULL && s != NULL)
+	while (f && s) {
+		// compare f with s and assign the smaller to p
+		if (f->data < s->data) {
+			// assigning the link to p updates the pointing address of that 
+			// node, which is retained even after p points to another node
+			p->link = f;
+			p = f;
+			f = f->link;
+		}
+		else {
+			p->link = s;
+			p = s;
+			s = s->link;
+		}
+		p->link = NULL;
+	}
+	// when one linkedlist reaches it's end, the other
+	// one is simply appended to the achieved result
+	if (f != NULL)
+		p->link = f;
+	else
+		p->link = s;
+}

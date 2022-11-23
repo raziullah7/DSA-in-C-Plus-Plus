@@ -2,8 +2,10 @@
 
 template <class T>
 class Chain {
-private:
+public:
 	Node<T>* first, * last;
+
+private:
 	int len;
 
 public:
@@ -18,4 +20,5 @@ public:
 	bool IsEmpty();
 	// bool IsFull();  (not relevent)
 	void Concat(Chain<T>*, Chain<T>*);
+	void Merge(Node<T>*, Node<T>*);
 };

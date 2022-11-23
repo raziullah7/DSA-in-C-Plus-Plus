@@ -10,7 +10,7 @@ int main() {
     // myChain1.Insert(3, 619);
     myChain1.Display();
 
-    int node = 619;
+    // int node = 619;
     /*myChain1.Delete(3, node);
     cout << "Deleted Value : " << node << "\n";*/
 
@@ -22,13 +22,18 @@ int main() {
     cout << "Position of 619 is : " << myChain1.Search(619) << endl;
 
     Chain<int> myChain2;
-    myChain2.Insert(1, 60);
-    myChain2.Insert(2, 70);
-    myChain2.Insert(3, 80);
-    myChain2.Insert(4, 90);
+    myChain2.Insert(1, 5);
+    myChain2.Insert(2, 15);
+    myChain2.Insert(3, 25);
+    myChain2.Insert(4, 35);
     myChain2.Display();
 
-    myChain1.Concat(&myChain1, &myChain2);
+    Chain<int> myChain3;
+    // myChain1.Concat(&myChain1, &myChain2);
+
+    myChain3.Merge(myChain1.first, myChain2.first);
+    myChain3.Display();
+
 
     return 0;
 }
