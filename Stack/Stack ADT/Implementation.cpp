@@ -35,7 +35,7 @@ void myStack<T>::Pop(T &element) {
 	len--;
 }
 
-// find function
+// find/peep function
 template <class T>
 bool myStack<T>::Find(int position, T& element) {
 	if (position < 1 || position > len + 1) {

@@ -20,4 +20,12 @@ int main() {
 	cout << "Stack Full : " << x << endl;
 	
 	st.Display();
+
+	st.Pop(x);
+	cout << x << endl;
+	st.Pop(x);
+	cout << x << endl;
+
+	st.Display();
+
 }
