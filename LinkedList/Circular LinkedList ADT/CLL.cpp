@@ -41,13 +41,14 @@ void CLL<T>::Insert(int position, T element) {
 	else {
 		// traversing to (position - 2)
 		Node<T>* p = first;
-		for (int i = 0; i < postion - 2; i++) {
+		for (int i = 0; i < position - 2; i++) {
 			p = p->link;
 		}
 		// inserting node
 		temp->link = p->link;
 		p->link = temp;
 	}
+	len++;
 }
 
 // delete function
@@ -81,7 +82,7 @@ void CLL<T>::Delete(int position, T& element) {
 		// travering
 		for (int i = 0; i < position - 2; i++)
 			p = p->link;
-		q = p.link;
+		q = p->link;
 		// getting element
 		element = q->data;
 		// rearranging pointers to delete node
@@ -91,7 +92,6 @@ void CLL<T>::Delete(int position, T& element) {
 		delete q;
 	}
 
-//========================================================
 	// for input validatation
 	else if (len == 0) {
 		std::cout << "Circular LinkedList is Empty ..."
@@ -104,7 +104,6 @@ void CLL<T>::Delete(int position, T& element) {
 			<< "\n";
 		return;
 	}
-//========================================================
 
 	// deleting from any middle position
 	else {
@@ -125,4 +124,22 @@ void CLL<T>::Delete(int position, T& element) {
 
 	// reducing length of CLL
 	len--;
+}
+
+// display function
+template <class T>
+void CLL<T>::Display() {
+	// checking if the CLL is empty
+	if (first == NULL) {
+		std::cout << "Circular LinkedList is Empty!"
+			<< "\n";
+		return;
+	}
+	// otherwise display the CLL
+	Node<T>* p = first;
+	do {
+		std::cout << p->data << " ";
+		p = p->link;
+	} while (p != first);
+	std::cout << "\n";
 }
