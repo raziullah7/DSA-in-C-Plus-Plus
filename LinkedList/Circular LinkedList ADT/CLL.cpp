@@ -138,8 +138,22 @@ void CLL<T>::Display() {
 	// otherwise display the CLL
 	Node<T>* p = first;
 	do {
-		std::cout << p->data << " ";
+		std::cout << p->data << "->";
 		p = p->link;
 	} while (p != first);
 	std::cout << "\n";
+}
+
+// recursive display function;
+template<class T>
+void CLL<T>::RDisplay(Node<T>* p) {
+	// make variable static to reduce initialization
+	static int visited = 0;
+	if (p != first || visited == 0) {
+		visited = 1;
+		std::cout << p->data << "->";
+		RDisplay(p->link);
+	}
+	// make it zero again as it's static
+	visited = 0;
 }

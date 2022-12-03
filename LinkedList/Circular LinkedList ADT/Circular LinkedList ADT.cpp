@@ -14,5 +14,5 @@ int main() {
     int x = 0;
     myCLL.Delete(4, x);
 
-    myCLL.Display();
+    myCLL.RDisplay(myCLL.getFirst());
 }
