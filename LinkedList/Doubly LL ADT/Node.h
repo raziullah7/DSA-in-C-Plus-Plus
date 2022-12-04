@@ -3,7 +3,7 @@
 template<class T>
 class Node {
 public:
-    T Data;
+    T data;
     Node<T>* lptr;
     Node<T>* rptr;
 };

@@ -3,6 +3,10 @@
 
 int main() {
     DLL<int> myDLL;
-    std::cout << "Hello World!\n";
+    myDLL.Insert(1, 10);
+    myDLL.Insert(2, 20);
+    myDLL.Insert(3, 30);
+    myDLL.Insert(2, 40);
+    myDLL.Display();
     return 0;
 }
