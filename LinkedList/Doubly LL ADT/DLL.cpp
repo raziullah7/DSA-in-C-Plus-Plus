@@ -10,7 +10,7 @@ DLL<T>::DLL() {
 	len = 0;
 }
 
-// insert function
+// Insert function
 template <class T>
 void DLL<T>::Insert(int position, T element) {
 	// input validation
@@ -64,7 +64,7 @@ void DLL<T>::Insert(int position, T element) {
 	len++;
 }
 
-// display function
+// Display function
 template <class T>
 void DLL<T>::Display() {
 	// if list is empty
@@ -81,7 +81,7 @@ void DLL<T>::Display() {
 	cout << "\n";
 }
 
-// delete function
+// Delete function
 template <class T>
 void DLL<T>::Delete(int position, T& element) {
 	// if DLL is empty
@@ -136,6 +136,8 @@ void DLL<T>::Delete(int position, T& element) {
 			delete q;
 		}
 	}
+	// decrementing length
+	len--;
 }
 
 // isEmpty function
@@ -147,8 +149,46 @@ bool DLL<T>::isEmpty() {
 		return false;
 }
 
-// delete function
+// Length function
 template <class T>
 int DLL<T>::Length() {
 	return len;
+}
+
+// Find function (returns true or false)
+template <class T>
+bool DLL<T>::Find(int position, T& element) {
+	// input validation
+	if (position < 1 || position > len) {
+		cout << "Invalid Position! Enter a position"
+			<< " between 1 and " << len << "\n";
+		return false;
+	}
+
+	// traversal node
+	Node<T>* p = first;
+	// traversing
+	for (int i = 0; i < position - 1; i++) {
+		p = p->rptr;
+	}
+	// getting element to find on given position
+	element = p->data;
+	// returning
+	return true;
+}
+
+// Search function (returns position of searched element)
+template <class T>
+int DLL<T>::Search(T element) {
+	// traversal node
+	Node<T>* p = first;
+	// traversing and checking
+	for (int i = 1; i <= len; i++) {
+		if (p->data == element) {
+			// successful
+			return i;
+		}
+	}
+	// unsuccessful
+	return -1;
 }

@@ -12,5 +12,8 @@ int main() {
     int x = 0;
     myDLL.Delete(2, x);
     myDLL.Display();
+
+    cout << myDLL.Find(3, x) << endl;
+
     return 0;
 }
