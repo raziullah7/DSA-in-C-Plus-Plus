@@ -81,46 +81,6 @@ void DLL<T>::Display() {
 	cout << "\n";
 }
 
-// delete function
-template <class T>
-void DLL<T>::Delete(int position, T& element) {
-	// if DLL is empty
-	if (len == 0) {
-		cout << "Double LinkedList Empty!\n";
-		return;
-	}
-
-	// input validation
-	if (position < 1 || position > len) {
-		cout << "Invalid Position! Enter a position"
-			<< " between 1 and " << len << "\n";
-		return;
-	}
-
-	// otherwise, take position in consideration
-	else {
-		if (position == 1) {
-			// traversal node
-			Node<T>* p = first;
-			// deleting
-			first = first->rptr;
-			first->lptr = NULL;
-			delete p;
-		}
-		else if (position == len) {
-			// traversal node
-			Node<T>* p = last;
-			// deleting
-			last = last->lptr;
-			last->rptr = NULL;
-			delete p;
-		}
-		else {
-
-		}
-	}
-}
-
 // isEmpty function
 template <class T>
 bool DLL<T>::isEmpty() {
