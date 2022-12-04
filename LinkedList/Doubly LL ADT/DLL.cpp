@@ -16,7 +16,7 @@ void DLL<T>::Insert(int position, T element) {
 	// input validation
 	if (position < 1 || position > len + 1) {
 		cout << "Invalid Position! Enter a position"
-			<< " between 1 to " << len + 1 << "\n";
+			<< " between 1 and " << len + 1 << "\n";
 		return;
 	}
 
@@ -26,13 +26,13 @@ void DLL<T>::Insert(int position, T element) {
 	temp->lptr = NULL;
 	temp->rptr = NULL;
 
-	// if there are no elements in the LL
+	// if there are no elements in the DLL
 	if (first == NULL) {
 		first = temp;
 		last = temp;
 	}
 
-	// otherwise take position into consideration
+	// otherwise, take position in consideration
 	else {
 		if (position == 1) {
 			temp->rptr = first;
@@ -79,4 +79,59 @@ void DLL<T>::Display() {
 		p = p->rptr;
 	}
 	cout << "\n";
+}
+
+// delete function
+template <class T>
+void DLL<T>::Delete(int position, T& element) {
+	// if DLL is empty
+	if (len == 0) {
+		cout << "Double LinkedList Empty!\n";
+		return;
+	}
+
+	// input validation
+	if (position < 1 || position > len) {
+		cout << "Invalid Position! Enter a position"
+			<< " between 1 and " << len << "\n";
+		return;
+	}
+
+	// otherwise, take position in consideration
+	else {
+		if (position == 1) {
+			// traversal node
+			Node<T>* p = first;
+			// deleting
+			first = first->rptr;
+			first->lptr = NULL;
+			delete p;
+		}
+		else if (position == len) {
+			// traversal node
+			Node<T>* p = last;
+			// deleting
+			last = last->lptr;
+			last->rptr = NULL;
+			delete p;
+		}
+		else {
+
+		}
+	}
+}
+
+// isEmpty function
+template <class T>
+bool DLL<T>::isEmpty() {
+	if (len == 0)
+		return true;
+	else
+		return false;
+}
+
+// delete function
+template <class T>
+int DLL<T>::Length() {
+	return len;
 }

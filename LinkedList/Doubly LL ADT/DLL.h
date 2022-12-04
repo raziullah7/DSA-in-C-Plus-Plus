@@ -16,5 +16,5 @@ public:
     int Search(T);
     void Display();
     bool isEmpty();
-    int Length() { return len; }
+    int Length();
 };
