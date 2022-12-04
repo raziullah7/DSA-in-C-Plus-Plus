@@ -10,6 +10,19 @@ DLL<T>::DLL() {
 	len = 0;
 }
 
+// destructor
+template <class T>
+DLL<T>::~DLL() {
+	// traversal node
+	Node<T>* p = first;
+	// traversing and deleting
+	while (p != NULL) {
+		first = first->rptr;
+		delete p;
+		p = first;
+	}
+}
+
 // Insert function
 template <class T>
 void DLL<T>::Insert(int position, T element) {

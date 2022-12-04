@@ -9,7 +9,7 @@ private:
     int len;
 public:
     DLL();
-    ~DLL() {}
+    ~DLL();
     void Insert(int, T);
     void Delete(int, T&);
     bool Find(int, T&);
