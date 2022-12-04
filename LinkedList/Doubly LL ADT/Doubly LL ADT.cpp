@@ -8,5 +8,9 @@ int main() {
     myDLL.Insert(3, 30);
     myDLL.Insert(2, 40);
     myDLL.Display();
+
+    int x = 0;
+    myDLL.Delete(2, x);
+    myDLL.Display();
     return 0;
 }
