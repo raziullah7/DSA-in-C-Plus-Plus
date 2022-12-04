@@ -9,6 +9,28 @@ CLL<T>::CLL() {
 	len = 0;
 }
 
+// destructor
+template <class T>
+CLL<T>::~CLL() {
+	// traversal node
+	Node<T>* p = first;
+	// traversing to last node
+	while (p->link != first) {
+		p = p->link;
+	}
+	// deleting nodes from the start
+	while (p != first) {
+		p->link = first;
+		delete first;
+		first = p->link;
+	}
+	// deleting the last remaining node that is pointing to itself
+	if (p == first) {
+		delete p;
+		first = NULL;
+	}
+}
+
 // insert function
 template <class T>
 void CLL<T>::Insert(int position, T element) {

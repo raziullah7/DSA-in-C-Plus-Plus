@@ -9,7 +9,7 @@ private:
 
 public:
     CLL();
-    ~CLL() {}
+    ~CLL();
     Node<T>* getFirst() { return first; }
     void Insert(int, T);
     void Delete(int, T&);
