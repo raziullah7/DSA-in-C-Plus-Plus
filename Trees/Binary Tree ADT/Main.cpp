@@ -20,5 +20,8 @@ int main() {
 	cout << "\nPostorder traversal: ";
 	b.PostOrder(r);
 
+	cout << "\nHeight : " << b.Height(r);
+	cout << "\nNode Count : " << b.CountNodes(r);
+
 	return 0;
 }

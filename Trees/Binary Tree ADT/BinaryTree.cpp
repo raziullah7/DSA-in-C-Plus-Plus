@@ -111,3 +111,18 @@ int BinaryTree<T>::Height(Node<T>* p) {
 		return r + 1;
 	}
 }
+
+// counting nodes of the tree
+template <class T>
+int BinaryTree<T>::CountNodes(Node<T>* p) {
+	int l = 0, r = 0;
+	// base case
+	if (p == NULL) {
+		return 0;
+	}
+	// otherwise, recursive case
+	l = CountNodes(p->Lchild);
+	r = CountNodes(p->Rchild);
+	// return
+	return l + r + 1;
+}
