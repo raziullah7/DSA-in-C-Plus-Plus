@@ -97,7 +97,7 @@ template <class T>
 int BinaryTree<T>::Height(Node<T>* p) {
 	int l = 0, r = 0;
 	// base case
-	if (p == 0) {
+	if (p == NULL) {
 		return -1;
 	}
 	// otherwise, recursive case
