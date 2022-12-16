@@ -8,5 +8,17 @@ int main() {
 	r->Rchild->Lchild = b.newNode('D');
 	r->Lchild->Rchild = b.newNode('E');
 
+	cout << "\npreorder traversal: ";
+	b.PreOrder(r);
+
+	cout << "\nInorder traversal: ";
+	b.InOrder(r);
+
+	cout << "\nIterative Inorder traversal: ";
+	b.IterativeInOrder(r);
+
+	cout << "\nPostorder traversal: ";
+	b.PostOrder(r);
+
 	return 0;
 }

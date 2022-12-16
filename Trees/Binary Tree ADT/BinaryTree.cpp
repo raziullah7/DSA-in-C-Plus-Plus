@@ -1,4 +1,5 @@
 #include "BinaryTree.h"
+#include "StackADT.cpp"
 #include <iostream>
 using namespace std;
 
@@ -12,6 +13,7 @@ BinaryTree<T>::BinaryTree() {
 template <class T>
 Node<T>* BinaryTree<T>::newNode(T data) {
 	root = new Node<T>;
+	root->data = data;
 	root->Lchild = NULL;
 	root->Rchild = NULL;
 	return root;
@@ -20,23 +22,51 @@ Node<T>* BinaryTree<T>::newNode(T data) {
 // recursive in-order traversal
 template <class T>
 void BinaryTree<T>::InOrder(Node<T>* r) {
-	InOrder(r->Lchild);
-	cout << " " << r->data;
-	InOrder(r->Rchild);
+	if (r != NULL) {
+		InOrder(r->Lchild);
+		cout << " " << r->data;
+		InOrder(r->Rchild);
+	}
 }
 
 // recursive pre-order traversal
 template <class T>
 void BinaryTree<T>::PreOrder(Node<T>* r) {
-	cout << " " << r->data;
-	InOrder(r->Lchild);
-	InOrder(r->Rchild);
+	if (r != NULL) {
+		cout << " " << r->data;
+		InOrder(r->Lchild);
+		InOrder(r->Rchild);
+	}
 }
 
 // recursive post-order traversal
 template <class T>
 void BinaryTree<T>::PostOrder(Node<T>* r) {
-	InOrder(r->Lchild);
-	InOrder(r->Rchild);
-	cout << " " << r->data;
+	if (r != NULL) {
+		InOrder(r->Lchild);
+		InOrder(r->Rchild);
+		cout << " " << r->data;
+	}
+}
+
+// iterative in-order traversal
+template <class T>
+void BinaryTree<T>::IterativeInOrder(Node<T>* p) {
+	// making stack
+	StackADT<Node<T>*> st(10);
+	// traversing
+	while (p != NULL || !(st.IsEmpty())) {
+		// going left
+		if (p != NULL) {
+			st.Push(p);
+			p = p->Lchild;
+		}
+		// going right
+		else {
+			st.Pop(p);
+			cout << " " << p->data;
+			p = p->Rchild;
+
+		}
+	}
 }
