@@ -34,8 +34,8 @@ template <class T>
 void BinaryTree<T>::PreOrder(Node<T>* r) {
 	if (r != NULL) {
 		cout << " " << r->data;
-		InOrder(r->Lchild);
-		InOrder(r->Rchild);
+		PreOrder(r->Lchild);
+		PreOrder(r->Rchild);
 	}
 }
 
@@ -43,8 +43,8 @@ void BinaryTree<T>::PreOrder(Node<T>* r) {
 template <class T>
 void BinaryTree<T>::PostOrder(Node<T>* r) {
 	if (r != NULL) {
-		InOrder(r->Lchild);
-		InOrder(r->Rchild);
+		PostOrder(r->Lchild);
+		PostOrder(r->Rchild);
 		cout << " " << r->data;
 	}
 }
@@ -67,6 +67,27 @@ void BinaryTree<T>::IterativeInOrder(Node<T>* p) {
 			cout << " " << p->data;
 			p = p->Rchild;
 
+		}
+	}
+}
+
+// iterative in-order traversal
+template <class T>
+void BinaryTree<T>::IterativePreOrder(Node<T>* p) {
+	// making stack
+	StackADT<Node<T>*> st(10);
+	// traversing
+	while (p != NULL || !st.IsEmpty()) {
+		// going left
+		if (p != NULL) {
+			cout << " " << p->data;
+			st.Push(p);
+			p = p->Lchild;
+		}
+		// going right
+		else {
+			st.Pop(p);
+			p = p->Rchild;
 		}
 	}
 }
