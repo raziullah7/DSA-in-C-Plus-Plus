@@ -6,7 +6,6 @@ class BinaryTree {
 public:
 	Node<T>* root;
 	BinaryTree();
-	~BinaryTree();
 	Node<T>* newNode(T);
 	void InOrder(Node<T>*);
 	void PreOrder(Node<T>*);
