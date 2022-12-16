@@ -91,3 +91,23 @@ void BinaryTree<T>::IterativePreOrder(Node<T>* p) {
 		}
 	}
 }
+
+// height of tree
+template <class T>
+int BinaryTree<T>::Height(Node<T>* p) {
+	int l = 0, r = 0;
+	// base case
+	if (p == 0) {
+		return -1;
+	}
+	// otherwise, recursive case
+	l = Height(p->Lchild);
+	r = Height(p->Rchild);
+	// conditional return
+	if (l > r) {
+		return l + 1;
+	}
+	else {
+		return r + 1;
+	}
+}
