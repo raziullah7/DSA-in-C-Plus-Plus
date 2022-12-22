@@ -3,6 +3,10 @@
 #include <iostream>
 using namespace std;
 
+// for some reason, "std::cout" statement is not working in this file
+// i tested things out and it's just not working in Visual Studio, but
+// works just fine in Visual Studio Code (VS Code)
+
 // constructor
 template <class T>
 BinaryTree<T>::BinaryTree() {
