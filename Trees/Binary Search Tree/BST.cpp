@@ -11,23 +11,45 @@ Node* BST::GetRootElement() {
 	return root;
 }
 
-// search method
+// iterative search method
 Node* BST::Search(int key) {
 	Node* node = root;
+
 	while (node != NULL) {
-		// going right
-		if (node->data > key) {
-			node = node->right;
+		// successfully found
+		if (node->data == key) {
+			return node;
 		}
 		// going left
 		else if (node->data < key) {
 			node = node->left;
 		}
-		// successfully found
+		// going right
 		else {
-			return node;
+			node = node->right;
 		}
 	}
 	// unsuccessful search
 	return NULL;
+}
+
+// recursive search method
+Node* BST::RecursiveSearch(int key, Node* node) {
+	// input validation
+	if (node == NULL) {
+		return NULL;
+	}
+
+	// successful search
+	if (node->data == key) {
+		return node;
+	}
+	// going left
+	else if (node->data < key) {
+		return RecursiveSearch(key, node->left);
+	}
+	// going right
+	else {
+		return RecursiveSearch(key, node->right);
+	}
 }

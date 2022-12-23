@@ -10,6 +10,7 @@ public:
     void Insert(int key);
     void Inorder(Node* p);
     Node* Search(int key);
+    Node* RecursiveSearch(int key, Node*);
     Node* Delete(Node* p, int key);
     Node* InOrderPred(Node* p);
     Node* InOrderSucc(Node* p);
