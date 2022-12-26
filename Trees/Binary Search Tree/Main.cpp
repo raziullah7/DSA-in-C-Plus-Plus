@@ -30,5 +30,7 @@ int main() {
 	cout << "Height : " <<
 	 myTree.Height(myTree.GetRootElement()) << '\n';
 
+	cout << myTree.Delete(30, myTree.GetRootElement())->data;
+
 	return 0;
 }
