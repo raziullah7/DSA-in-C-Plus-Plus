@@ -14,13 +14,21 @@ int main() {
 	myTree.Insert(22);
 	myTree.Insert(24);
 	myTree.Insert(40);
-	myTree.Insert(3);
-	myTree.Insert(35);
 
+	cout << "Inorder Traversal : ";
 	myTree.Inorder(myTree.GetRootElement());
+	cout << '\n';
 
 	cout << "Inorder Predecessor : "
-	 << myTree.InOrderSucc(myTree.GetRootElement())->data;
+	 << myTree.InOrderPred(myTree.GetRootElement())->data
+	 << endl;
+
+	cout << "Inorder Successor : "
+	 << myTree.InOrderSucc(myTree.GetRootElement())->data
+	 << endl;
+	
+	cout << "Height : " <<
+	 myTree.Height(myTree.GetRootElement()) << '\n';
 
 	return 0;
 }

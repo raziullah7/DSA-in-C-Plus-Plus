@@ -67,7 +67,6 @@ void BST::Insert(int key) {
 		root = p;
 		return;
 	}
-
 	// searching
 	while (R != NULL) {
 		r = R;
@@ -103,27 +102,54 @@ void BST::Inorder(Node* p) {
 }
 
 // delete function
-// Node* BST::Delete(int key, Node* p) {
-// 	// for empty tree
-// 	if (p == NULL) {
-// 		return NULL;
-// 	}
-// 	// for leaf node or only one node in the tree
-// 	if (p->left == NULL && p->right && p->data == key) {
-// 		if (p == root) {
-// 			root = NULL;
-// 		}
-// 		delete p;
-// 		return NULL;
-// 	}
-// 	// recursively searching and traversing
-// 	if (key < p->data) {
-// 		p->left = Delete(key, p->left);
-// 	}
-// 	else if (key > p->data) {
-// 		p->right = Delete(key, p->right);
-// 	}
-// }
+Node* BST::Delete(int key, Node* p) {
+	// for empty tree
+	if (p == NULL) {
+		return NULL;
+	}
+	// for leaf node or only one node in the tree
+	if (p->left == NULL && p->right && p->data == key) {
+		if (p == root) {
+			root = NULL;
+		}
+		delete p;
+		return NULL;
+	}
+	// recursively searching and traversing
+	if (key < p->data) {
+		p->left = Delete(key, p->left);
+	}
+	else if (key > p->data) {
+		p->right = Delete(key, p->right);
+	}
+	// deleting and replacing with respect to height
+	// to maintain balance
+	else {
+		Node* q;
+		// if height of left tree greater than that of right,
+		// then replace p with it's Inorder Predecessor
+		if (Height(p->left) > Height(p->right)) {
+			// get Inorder Predecessor of p
+			q = InOrderPred(p);
+			// overwrite data of p with it's Inorder Predecessor
+			p->data = q->data;
+			// delete Inorder Predecessor from it's
+			// original location
+			p->left = Delete(q->data, p->left);
+		}
+		// otherwise, replace with Inorder Successor
+		else {
+			// get Inorder Predecessor of p
+			q = InOrderSucc(p);
+			// overwrite data of p with it's Inorder Successor
+			p->data = q->data;
+			// delete Inorder Successor from it's
+			// original location
+			p->right = Delete(q->data, p->right);
+		}
+	}
+	return p;
+}
 
 // method to find InOrder Predecessor of any node
 Node* BST::InOrderPred(Node* p) {
@@ -151,4 +177,21 @@ Node* BST::InOrderSucc(Node* p) {
 		p = p->left;
 	}
 	return p;
+}
+
+// method to find height of tree
+int BST::Height(Node* p) {
+	int left = 0, right = 0;
+	if (p == NULL) {
+		return -1;
+	}
+	left = Height(p->left);
+	right = Height(p->right);
+	
+	if (left > right) {
+		return (left + 1);
+	}
+	else {
+		return (right + 1);
+	}
 }
