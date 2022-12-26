@@ -93,10 +93,62 @@ void BST::Insert(int key) {
 		r->right = p;
 }
 
+// inorder traversal
 void BST::Inorder(Node* p) {
 	if (p != NULL) {
 		Inorder(p->left);
 		cout << p->data << " ";
 		Inorder(p->right);
 	}
+}
+
+// delete function
+// Node* BST::Delete(int key, Node* p) {
+// 	// for empty tree
+// 	if (p == NULL) {
+// 		return NULL;
+// 	}
+// 	// for leaf node or only one node in the tree
+// 	if (p->left == NULL && p->right && p->data == key) {
+// 		if (p == root) {
+// 			root = NULL;
+// 		}
+// 		delete p;
+// 		return NULL;
+// 	}
+// 	// recursively searching and traversing
+// 	if (key < p->data) {
+// 		p->left = Delete(key, p->left);
+// 	}
+// 	else if (key > p->data) {
+// 		p->right = Delete(key, p->right);
+// 	}
+// }
+
+// method to find InOrder Predecessor of any node
+Node* BST::InOrderPred(Node* p) {
+	// checking if the node has a predecessor
+	if (p->left == NULL) {
+		return NULL;
+	}
+	// else, finding predecessor
+	p = p->left;
+	while (p != NULL && p->right != NULL) {
+		p = p->right;
+	}
+	return p;
+}
+
+// method to find InOrder Successor of any node
+Node* BST::InOrderSucc(Node* p) {
+	// checking if the node has a successor
+	if (p->right == NULL) {
+		return NULL;
+	}
+	// else, finding successor
+	p = p->right;
+	while (p != NULL && p->left != NULL) {
+		p = p->left;
+	}
+	return p;
 }

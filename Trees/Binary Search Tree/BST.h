@@ -11,9 +11,8 @@ public:
     void Inorder(Node* p);
     Node* Search(int key);
     Node* RecursiveSearch(int key, Node*);
-    Node* Delete(Node* p, int key);
+    Node* Delete(int key, Node* p);
     Node* InOrderPred(Node* p);
     Node* InOrderSucc(Node* p);
     int Height(Node* p);
 };
-

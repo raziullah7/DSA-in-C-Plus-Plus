@@ -19,5 +19,8 @@ int main() {
 
 	myTree.Inorder(myTree.GetRootElement());
 
+	cout << "Inorder Predecessor : "
+	 << myTree.InOrderSucc(myTree.GetRootElement())->data;
+
 	return 0;
 }
