@@ -70,10 +70,10 @@ bool myGraph::EdgeExists(int vertex1, int vertex2) {
     if (vertex1 < 1 || vertex1 > n || vertex2 < 1 || vertex2 > n) {
         cout << "Bad Input, no such element in graph\n";
     }
-    // return (arr[vertex1][vertex2] == 1)? true : false;
-    if(arr[vertex1][vertex2] == 1)
-		return true;
-	return false;
+    return (arr[vertex1][vertex2] == 1)? true : false;
+    // if(arr[vertex1][vertex2] == 1)
+	// 	return true;
+	// return false;
 }
 
 void myGraph::InsertEdge(int vertex1, int vertex2) {
@@ -93,4 +93,22 @@ void myGraph::DeleteEdge(int vertex1, int vertex2) {
     }
     // deleting bi-directional edge
     arr[vertex1][vertex2] = 0;
+    arr[vertex2][vertex1] = 0;
+}
+
+void myGraph::DisplayAdjMatrix() {
+    // garphical structuring
+    cout << "Adjacency Matrix : \n" << "   ";
+    for (int i = 1; i <= n; i++) {
+        cout << " " << i;
+    }
+    cout << endl;
+    // printing adjacency matrix
+    for (int i = 1; i <= n; i++) {
+        cout << i << " :";
+        for (int j = 1; j <= n; j++) {
+            cout << " " << arr[i][j];
+        }
+        cout << endl;
+    }
 }
