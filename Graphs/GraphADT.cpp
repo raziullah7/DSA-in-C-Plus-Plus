@@ -29,3 +29,36 @@ myGraph::myGraph(int vertices, int edges) {
 myGraph::~myGraph() {
     delete [] arr;
 }
+
+// method to get number of vertices
+int myGraph::NumberOfVertices() {
+    return n;
+}
+
+// method to get number of edges
+int myGraph::NumberOfEdges() {
+    return e;
+}
+
+// isEmpty method to check if the number of
+// vertices is zero or not
+bool myGraph::isEmpty() {
+    // if (n == 0)
+    //     return true;
+    // else
+    //     return false;
+    return (n == 0);
+}
+
+// method to get degree of the graph
+int myGraph::Degree(int vertex) {
+    // sum will contain the number of edges
+    // incident on the passed vertex
+    int sum = 0;
+    // loop to get row sum
+    for (int j = 1; j <= n; j++) {
+        sum += arr[vertex][j];
+    }
+    // return sum (degree)
+    return sum;
+}
