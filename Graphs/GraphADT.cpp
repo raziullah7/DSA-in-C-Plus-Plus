@@ -62,3 +62,12 @@ int myGraph::Degree(int vertex) {
     // return sum (degree)
     return sum;
 }
+
+// method to check if an edge exists in
+// between the two given vertices
+bool myGraph::EdgeExists(int vertex1, int vertex2) {
+    if (vertex1 < 1 || vertex1 > n || vertex2 < 1 || vertex2 > n) {
+        cout << "Bad Input, no such element in graph\n";
+    }
+    return (arr[vertex1][vertex2] == 1)? true : false;
+}
