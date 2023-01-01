@@ -57,7 +57,7 @@ int myGraph::Degree(int vertex) {
     int sum = 0;
     // loop to get row sum
     for (int j = 1; j <= n; j++) {
-        sum += arr[vertex][j];
+        sum = sum + arr[vertex][j];
     }
     // return sum (degree)
     return sum;
@@ -66,8 +66,31 @@ int myGraph::Degree(int vertex) {
 // method to check if an edge exists in
 // between the two given vertices
 bool myGraph::EdgeExists(int vertex1, int vertex2) {
+    // input validation
     if (vertex1 < 1 || vertex1 > n || vertex2 < 1 || vertex2 > n) {
         cout << "Bad Input, no such element in graph\n";
     }
-    return (arr[vertex1][vertex2] == 1)? true : false;
+    // return (arr[vertex1][vertex2] == 1)? true : false;
+    if(arr[vertex1][vertex2] == 1)
+		return true;
+	return false;
+}
+
+void myGraph::InsertEdge(int vertex1, int vertex2) {
+    // input validation
+    if (vertex1 < 1 || vertex1 > n || vertex2 < 1 || vertex2 > n || arr[vertex1][vertex2] == 1) {
+        cout << "Bad Input, no such element in graph\n";
+    }
+    // inserting bi-directional edge
+    arr[vertex1][vertex2] = 1;
+    arr[vertex2][vertex1] = 1;
+}
+
+void myGraph::DeleteEdge(int vertex1, int vertex2) {
+    // input validation
+    if (vertex1 < 1 || vertex1 > n || vertex2 < 1 || vertex2 > n || arr[vertex1][vertex2] == 0) {
+        cout << "Bad Input, no such element in graph\n";
+    }
+    // deleting bi-directional edge
+    arr[vertex1][vertex2] = 0;
 }
