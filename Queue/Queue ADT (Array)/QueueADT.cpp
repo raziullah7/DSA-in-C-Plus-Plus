@@ -59,6 +59,7 @@ bool Queue<T>::Find(int position, T& element) {
 // search method to find any element in the queue
 template <class T>
 int Queue<T>::Search(T element) {
+    // iterating through the queue
     for (int i = front + 1; i <= rear; i++) {
         if (element == Q[i]) {
             // successful search
@@ -67,4 +68,39 @@ int Queue<T>::Search(T element) {
     }
     // unsuccessful search
     return -1;
+}
+
+// inEmpty mehtod
+template <class T>
+bool Queue<T>::isEmpty() {
+    // if (front == rear) {
+    //     return true;
+    // }
+    // return false;
+    return (front == rear);
+}
+
+// inFull mehtod
+template <class T>
+bool Queue<T>::isFull() {
+    // if (rear == size - 1) {
+    //     return true;
+    // }
+    // return false;
+    return (rear == size - 1);
+}
+
+// Length mehtod
+template <class T>
+int Queue<T>::Length() {
+    return len;
+}
+
+// Display mehtod
+template <class T>
+void Queue<T>::Display() {
+    // traversing and printing
+    for (int i = front + 1; i <= rear; i++) {
+        cout << Q[i] << "<-";
+    }
 }
