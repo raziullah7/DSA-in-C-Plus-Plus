@@ -17,4 +17,5 @@ public:
 	void InsertEdge(int, int);
 	void DeleteEdge(int, int);
 	void DisplayAdjMatrix();
+    void BFS(int);
 };
