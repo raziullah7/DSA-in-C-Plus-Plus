@@ -19,6 +19,6 @@ public:
     int Search(T);
     bool isEmpty();
     bool isFull();
-    int Length(){ return len;}
+    int Length();
     void Display();
 };
