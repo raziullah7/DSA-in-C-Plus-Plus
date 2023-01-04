@@ -41,3 +41,30 @@ void Queue<T>::DeQueue(T& element) {
     element = Q[front];
     len--;
 }
+
+// find method gets the position and returns the element 
+// found on that position (if the position is valid) 
+template <class T>
+bool Queue<T>::Find(int position, T& element) {
+    // input validation
+    if (position < 1 || position > len) {
+        cout << "Invalid Position!\n";
+        return false;
+    }
+    // returning element
+    element = Q[position - 1];
+    return true;
+}
+
+// search method to find any element in the queue
+template <class T>
+int Queue<T>::Search(T element) {
+    for (int i = front + 1; i <= rear; i++) {
+        if (element == Q[i]) {
+            // successful search
+            return i;
+        }
+    }
+    // unsuccessful search
+    return -1;
+}
