@@ -21,4 +21,5 @@ public:
 	// void Merge(Node<T>*, Node<T>*);	// public access of *first
 	void Merge(Chain<T>*, Chain<T>*);	// private access of *first
 	void Reverse();
+	void RemoveDuplicate();
 };

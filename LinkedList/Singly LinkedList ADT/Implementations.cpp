@@ -26,8 +26,7 @@ Chain<T>::~Chain() {
 template <class T>
 void Chain<T>::Insert(int position, T element) {
 	// creating a node
-	Node<T>* temp;
-	temp = new Node<T>;
+	Node<T>* temp = new Node<T>;
 	temp->data = element;
 	temp->link = NULL;
 
@@ -41,7 +40,7 @@ void Chain<T>::Insert(int position, T element) {
 
 	// if temp is not the first node
 	else {
-		// inserting to first position in lisnkedlist
+		// inserting to first position in linkedlist
 		if (position == 1) {
 			temp->link = first;
 			first = temp;
@@ -295,4 +294,36 @@ void Chain<T>::Reverse() {
 		q = q->link;
 		i--;
 	}
+}
+
+//------------------------------------------------------
+// Remove Duplicate function
+template <class T>
+void Chain<T>::RemoveDuplicate() {
+	// input validation
+	if (first == NULL) {
+		cout << "LinkedList is Empty!\n";
+	}
+
+	Node<T> *after = NULL;
+    Node<T> *dup = NULL;
+    Node<T> *curr = first;
+
+    while(curr->link != NULL) {
+		// node after current one
+    	after = curr->link;
+        while(after != NULL) {
+			// if dup found
+        	if(curr->data == after->data) {
+        		dup = after; 
+            	curr->link = after->link;
+            	delete dup;
+			}
+			// if no dup found, advance after node
+        	else {
+            	after = after->link;
+            }
+        }
+        curr = curr->link; //advance curr node
+    }
 }

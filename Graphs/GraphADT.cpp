@@ -72,14 +72,14 @@ bool myGraph::EdgeExists(int vertex1, int vertex2) {
     }
     return (arr[vertex1][vertex2] == 1)? true : false;
     // if(arr[vertex1][vertex2] == 1)
-	// 	return true;
+	//     return true;
 	// return false;
 }
 
 void myGraph::InsertEdge(int vertex1, int vertex2) {
     // input validation
     if (vertex1 < 1 || vertex1 > n || vertex2 < 1 || vertex2 > n || arr[vertex1][vertex2] == 1) {
-        cout << "Bad Input, no such element in graph\n";
+        cout << "Bad Input\n";
     }
     // inserting bi-directional edge
     arr[vertex1][vertex2] = 1;
