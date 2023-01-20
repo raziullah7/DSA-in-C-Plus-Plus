@@ -270,33 +270,6 @@ void Chain<T>::Merge(Chain<T>* chain1, Chain<T>* chain2) {
 }
 
 //------------------------------------------------------
-// Reverse function
-template <class T>
-void Chain<T>::Reverse() {
-	// traversal Node pointers
-	Node<T>* p, * q;
-	p = first;
-	// array and loop control variable
-	T* temp = new T[len];
-	int i = 0;
-	// storing all values of linkedlist in an array
-	while (p != NULL) {
-		temp[i] = p->data;
-		p = p->link;
-		i++;
-	}
-	// reducing 1 from sentinal value
-	i--;
-	q = first;
-	// storing values in linkedlist from array in reverse order
-	while (q != NULL) {
-		q->data = temp[i];
-		q = q->link;
-		i--;
-	}
-}
-
-//------------------------------------------------------
 // Remove Duplicate function
 template <class T>
 void Chain<T>::RemoveDuplicate() {

@@ -1,4 +1,5 @@
 #include "Implementations.cpp"
+#include "Reverse.cpp"
 
 int main() {
     //Chain<int> myChain1;
@@ -44,11 +45,10 @@ int main() {
     myChain3.Insert(3, 30);
     myChain3.Insert(4, 40);
     myChain3.Insert(5, 50);
-    myChain3.Insert(6, 30);
-    myChain3.Insert(7, 40);
-    myChain3.Insert(8, 50);
-    myChain3.RemoveDuplicate();
+    //myChain3.RemoveDuplicate();
     myChain3.Display();
+    //myChain3.ReverseByPointers();
+    //myChain3.Display();
 
     return 0;
 }

@@ -18,8 +18,8 @@ public:
 	bool IsEmpty();
 	// bool IsFull();  (not relevent)
 	void Concat(Chain<T>*, Chain<T>*);
-	// void Merge(Node<T>*, Node<T>*);	// public access of *first
-	void Merge(Chain<T>*, Chain<T>*);	// private access of *first
-	void Reverse();
+	void Merge(Chain<T>*, Chain<T>*);
+	void ReverseByArray();
 	void RemoveDuplicate();
+	void ReverseByPointers();
 };
