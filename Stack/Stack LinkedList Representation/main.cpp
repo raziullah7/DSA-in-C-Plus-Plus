@@ -7,5 +7,9 @@ int main() {
 	stk.Push(30);
 
 	stk.Display();
+
+	int x = 0;
+	stk.Find(3, x);
+	cout << x;
 	return 0;
 }
