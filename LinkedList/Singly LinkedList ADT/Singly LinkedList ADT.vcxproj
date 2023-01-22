@@ -127,10 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Chain.cpp" />
+    <ClCompile Include="Chain.h" />
     <ClCompile Include="Implementations.cpp" />
-    <ClCompile Include="Node.cpp" />
-    <ClCompile Include="Singly LinkedList ADT.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Node.h" />
+    <ClCompile Include="Reverse.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -128,7 +128,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Implementation.cpp" />
-    <ClCompile Include="TwoStacksOneArray(ADT).cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="TwoStacksOneArray%28ADT%29.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

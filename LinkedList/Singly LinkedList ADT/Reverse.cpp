@@ -1,4 +1,4 @@
-#include "Implementations.cpp"
+#include "Chain.h"
 
 template <class T>
 void Chain<T>::ReverseByPointers() {

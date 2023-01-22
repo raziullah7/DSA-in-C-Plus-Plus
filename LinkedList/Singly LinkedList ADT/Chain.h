@@ -1,4 +1,4 @@
-#include "Node.cpp"
+#include "Node.h"
 
 template <class T>
 class Chain {

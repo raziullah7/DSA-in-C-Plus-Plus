@@ -1,4 +1,4 @@
-#include "TwoStacksOneArray(ADT).cpp"
+#include "TwoStacksOneArray(ADT).h"
 
 // constructor
 template <class T>

@@ -1,4 +1,4 @@
-#include "Chain.cpp"
+#include "Chain.h"
 
 //------------------------------------------------------
 // consturctor
