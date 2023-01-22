@@ -1,5 +1,6 @@
 #include "StackLL.h"
 #include <iostream>
+using namespace std;
 
 // constructor
 template <class T>
@@ -11,8 +12,9 @@ StackLL<T>::StackLL() {
 // destructor
 template <class T>
 StackLL<T>::~StackLL() {
+	T holder;
 	while (top != NULL) {
-		Pop(top);
+		Pop(holder);
 	}
 }
 
@@ -39,7 +41,8 @@ void StackLL<T>::Pop(T& element) {
 		return;
 	}
 	// traversal node
-	Node* p = top;
+	Node<T>* p;
+	p = top;
 	// getting element
 	element = p->data;
 	// assign new top node
@@ -55,4 +58,15 @@ void StackLL<T>::Pop(T& element) {
 template <class T>
 int StackLL<T>::Length() {
 	return len;
+}
+
+// display getter
+template <class T>
+void StackLL<T>::Display() {
+	Node<T>* p = top;
+	while (p != NULL) {
+		cout << " " << p->data;
+		p = p->link;
+	}
+	cout << endl;
 }
