@@ -65,7 +65,7 @@ template <class T>
 void StackLL<T>::Display() {
 	Node<T>* p = top;
 	while (p != NULL) {
-		cout << " " << p->data;
+		cout << p->data << "  ";
 		p = p->link;
 	}
 	cout << endl;
@@ -93,4 +93,24 @@ bool StackLL<T>::Find(int pos, T& element) {
 	// getting element
 	element = p->data;
 	return true;
+}
+
+// Search method, gets the position of given element
+template <class T>
+int StackLL<T>::Search(T element) {
+	// traversal pointer
+	Node<T>* p = top;
+	// variable to store position
+	int position = 1;
+	// searching for element
+	while (p != NULL) {
+		// comparing
+		if (p->data == element) {
+			return position;
+		}
+		// moving to next node
+		p = p->link;
+		position++;
+	}
+	return -1;
 }
