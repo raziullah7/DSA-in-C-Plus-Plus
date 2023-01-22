@@ -10,7 +10,7 @@ private:
 
 public:
 	TwoStacks(int);
-	~TwoStacks() { delete s; }
+	~TwoStacks();
 	void Push1(T);
 	void Push2(T);
 	void Pop1(T&);
