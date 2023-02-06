@@ -27,19 +27,26 @@ bool circularQ<T>::isFull() {
 // insertion
 template <class T>
 void circularQ<T>::EnQueue(T element) {
-	// incrementing this way to enable circular insertion
-	rear = (rear + 1) % size;
-	// isFull condition check
-	if (isFull()) {
+	//// incrementing this way to enable circular insertion
+	//rear = (rear + 1) % size;
+	//// isFull condition check
+	//if (isFull()) {
+	//	cout << "Circular Queue is Full!\n";
+	//	// now decrement to previous index to remove
+	//	// ambiguity in isFull and isEmpty conditions
+	//	if (rear == 0)
+	//		rear = size - 1;
+	//	else
+	//		rear--;
+	//	return;
+	//}
+
+	// more simple approach
+	if (front == ((rear + 1) % size)) {
 		cout << "Circular Queue is Full!\n";
-		// now decrement to previous index to remove
-		// ambiguity in isFull and isEmpty conditions
-		if (rear == 0)
-			rear = size - 1;
-		else
-			rear--;
 		return;
 	}
+	rear = (rear + 1) % size;
 	Q[rear] = element;
 	len++;
 }
