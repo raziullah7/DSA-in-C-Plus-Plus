@@ -21,7 +21,15 @@ circularQ<T>::~circularQ() {
 // ifFull method
 template <class T>
 bool circularQ<T>::isFull() {
-	return (rear == front);
+	// custom for circular queue
+	return (front == ((rear + 1) % size));
+}
+
+// isEmpty method
+template <class T>
+bool circularQ<T>::isEmpty() {
+	// custom for circular queue
+	return (front == rear);
 }
 
 // insertion
