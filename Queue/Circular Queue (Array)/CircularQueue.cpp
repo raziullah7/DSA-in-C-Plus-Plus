@@ -69,11 +69,27 @@ void circularQ<T>::DeQueue(T& element) {
 		return;
 	}
 	// increment front
-	front = (front + 1) / size;
+	front = (front + 1) % size;
 	// get front (item to be deleted)
 	element = Q[front];
-	// delete front
-	Q[front] = NULL;
 	// decrement length
 	len--;
+}
+
+// display method
+template <class T>
+void circularQ<T>::Display() {
+	// initializing loop control variable
+	int i = (front + 1) % size;
+	// looping and printing
+	while (i != (rear + 1) % size) {
+		cout << Q[i] << "<-";
+		i = (i + 1) % size;
+	}
+}
+
+// length method
+template <class T>
+int circularQ<T>::Length() {
+	return len;
 }
