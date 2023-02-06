@@ -12,6 +12,8 @@ private:
 public:
     circularQ(int size);
     ~circularQ();
+    T frontElem();
+    T rearElem();
     void EnQueue(T);
     void DeQueue(T&);
     bool isEmpty();

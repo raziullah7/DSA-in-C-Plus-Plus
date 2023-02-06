@@ -18,6 +18,18 @@ circularQ<T>::~circularQ() {
 	delete[] Q;
 }
 
+// getter for front element method
+template <class T>
+T circularQ<T>::frontElem() {
+	return Q[front];
+}
+
+// getter for rear element method
+template <class T>
+T circularQ<T>::rearElem() {
+	return Q[rear];
+}
+
 // ifFull method
 template <class T>
 bool circularQ<T>::isFull() {
