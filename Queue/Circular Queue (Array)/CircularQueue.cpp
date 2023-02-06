@@ -50,6 +50,7 @@ void circularQ<T>::EnQueue(T element) {
 	//}
 
 	// more simple approach
+	// full queue check
 	if (front == ((rear + 1) % size)) {
 		cout << "Circular Queue is Full!\n";
 		return;
@@ -62,5 +63,17 @@ void circularQ<T>::EnQueue(T element) {
 // deletion
 template <class T>
 void circularQ<T>::DeQueue(T& element) {
-
+	// empty queue check
+	if (isEmpty()) {
+		cout << "Circular Queue is Empty!\n";
+		return;
+	}
+	// increment front
+	front = (front + 1) / size;
+	// get front (item to be deleted)
+	element = Q[front];
+	// delete front
+	Q[front] = NULL;
+	// decrement length
+	len--;
 }
