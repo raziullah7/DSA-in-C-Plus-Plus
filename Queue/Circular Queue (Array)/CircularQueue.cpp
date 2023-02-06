@@ -21,7 +21,7 @@ circularQ<T>::~circularQ() {
 // getter for front element method
 template <class T>
 T circularQ<T>::frontElem() {
-	return Q[front];
+	return Q[(front + 1) % size];
 }
 
 // getter for rear element method
