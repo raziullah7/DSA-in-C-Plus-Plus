@@ -19,7 +19,16 @@ QueueLL<T>::~QueueLL() {
 		p = front;
 	}
 	delete p;
-	front = last = NULL;
+	front = rear = NULL;
+}
+
+// isEmpty method
+template <class T>
+bool QueueLL<T>::isEmpty() {
+	if (front == NULL && rear == NULL) {
+		return true;
+	}
+	return false;
 }
 
 // insertion(enqueue) operation
@@ -31,6 +40,9 @@ void QueueLL<T>::EnQueue(T element) {
 	temp->data = element;
 	temp->link = NULL;
 	// node insertion
+	if (isEmpty()) {
+		front = rear = temp;
+	}
 	rear->link = temp;
 	rear = temp;
 	// increasing length
@@ -53,4 +65,58 @@ void QueueLL<T>::DeQueue(T& element) {
 	len--;
 }
 
+// get element on a certain position in the queue
+template <class T>
+bool QueueLL<T>::Find(int pos, T& element) {
+	// input validation
+	if (pos < 1 || pos > len) {
+		cout << "Invalid Position!";
+		return false;
+	}
+	// traversal node
+	Node<T>* p = front;
+	// traversing till the position
+	for (int i = 0; i < pos - 1; i++) {
+		p = p->link;
+	}
+	// getting element
+	element = p->data;
+	// return
+	return true;
+}
 
+// finds the position on a certain element
+template <class T>
+int QueueLL<T>::Search(T element) {
+	// traversal node
+	Node<T>* p = front;
+	// i holds the current position being traversed
+	for (int i = 1; p != NULL; i++) {
+		// successsful search case
+		if (p->data == element) {
+			return i;
+		}
+		p = p->link;
+	}
+	// unsuccessful search case
+	return -1;
+}
+
+// length method
+template <class T>
+int QueueLL<T>::Length() {
+	return len;
+}
+
+// display method
+template <class T>
+void QueueLL<T>::Display() {
+	// traversal node
+	Node<T>* p = front;
+	// traversing and printing
+	while (p != NULL) {
+		cout << p->data << "<-";
+		p = p->link;
+	}
+	delete p;
+}

@@ -6,7 +6,7 @@ class QueueLL {
 private:
     // front and rear are substitutions of first
     // and last pointers in a simple linkedlist
-    Node<T>* front, rear;
+    Node<T>* front, * rear;
     // storing the current length of queue
     int len;
 
@@ -20,7 +20,7 @@ public:
     bool isEmpty();
     T FrontElem();
     T RearElem();
-    int Length() { return len; }
+    int Length();
     void Display();
 };
 
