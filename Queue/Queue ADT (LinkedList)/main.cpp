@@ -14,5 +14,13 @@ int main() {
 
 	myQ.Display();
 
+	myQ.EnQueue(60);
+	myQ.EnQueue(70);
+
+	myQ.Display();
+
+	cout << "Front Element : " << myQ.FrontElem() << endl;
+	cout << "Rear Element : " << myQ.RearElem() << endl;
+
 	return 0;
 }

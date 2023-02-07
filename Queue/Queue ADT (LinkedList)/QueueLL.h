@@ -7,7 +7,7 @@ private:
     // front and rear are substitutions of first
     // and last pointers in a simple linkedlist
     Node<T>* front, * rear;
-    // storing the current length of queue
+    // len is storing the current length of queue
     int len;
 
 public:

@@ -22,6 +22,18 @@ QueueLL<T>::~QueueLL() {
 	front = rear = NULL;
 }
 
+// front of queue getter
+template <class T>
+T QueueLL<T>::FrontElem() {
+	return front->data;
+}
+
+// end of queue getter
+template <class T>
+T QueueLL<T>::RearElem() {
+	return rear->data;
+}
+
 // isEmpty method
 template <class T>
 bool QueueLL<T>::isEmpty() {
@@ -118,5 +130,6 @@ void QueueLL<T>::Display() {
 		cout << p->data << "<-";
 		p = p->link;
 	}
+	cout << endl;
 	delete p;
 }
