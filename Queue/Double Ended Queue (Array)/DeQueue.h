@@ -8,6 +8,8 @@ private:
 public:
 	DeQueue(int);
 	~DeQueue();
+	T getFront();
+	T getRear();
 	bool IsFull();
 	bool IsEmpty();
 	int Length();
