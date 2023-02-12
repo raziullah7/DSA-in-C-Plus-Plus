@@ -38,7 +38,7 @@ int DeQueue<T>::Length() {
 template<class T>
 void DeQueue<T>::Display() {
 	if (IsEmpty()) {
-		cout << "Queue is Empty!\n";
+		cout << "DeQueue is Empty!\n";
 		return;
 	}
 	// initializing loop control variable
@@ -48,4 +48,51 @@ void DeQueue<T>::Display() {
 		cout << DQ[i] << "<-";
 		i = (i + 1) % size;
 	}
+}
+
+// insertion from front
+template<class T>
+void DeQueue<T>::InsertFront(T element) {
+	if (IsFull()) {
+		cout << "DeQueue is Full!\n";
+		return;
+	}
+	// first insertion
+	if (front == -1) {
+		front = 0;
+	}
+	// never inserted from front
+	// so circle around from start
+	else if (front == 0) {
+		front == size - 1;
+	}
+	// otherwise treat like a normal array
+	else {
+		front--;
+	}
+	DQ[front] = element;
+	len++;
+}
+
+// insertion from rear
+template<class T>
+void DeQueue<T>::InsertRear(T element) {
+	if (IsFull()) {
+		cout << "DeQueue is Full!\n";
+		return;
+	}
+	// first insertion
+	if (front == -1) {
+		front = 0;
+	}
+	// never inserted from rear
+	// so circle around from end
+	else if (rear == size - 1) {
+		rear = 0;
+	}
+	else {
+		rear++;
+	}
+	DQ[rear] = element;
+	len++;
 }
