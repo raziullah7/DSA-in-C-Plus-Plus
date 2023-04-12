@@ -11,6 +11,7 @@ int getMax(int arr[], int len) {
 	return max;
 }
 
+
 // Counting Sort function
 void CountingSort(int arr[], int len) {
 	// declaring max values
@@ -35,6 +36,7 @@ void CountingSort(int arr[], int len) {
 		}
 	}
 }
+
 
 // main function
 void main() {
