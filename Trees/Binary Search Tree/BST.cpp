@@ -57,7 +57,7 @@ Node* BST::RecursiveSearch(int key, Node* node) {
 void BST::Insert(int key) {
 	// using R for traversing and r to store
 	// the parent of R, p is new node to be entered
-	Node* R = root, * p , * r;
+	Node* R = root, * p = NULL , * r = NULL;
 	// inserting at root position
 	if (root == NULL) {
 		p = new Node;
