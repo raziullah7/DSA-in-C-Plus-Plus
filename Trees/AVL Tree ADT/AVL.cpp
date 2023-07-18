@@ -4,10 +4,10 @@ using namespace std;
 
 class AVL
 {
-private:
+public:
     Node* root;
 
-public:
+    AVL();
     int NodeHeight(Node* p);
     int BalanceFactor(Node* p);
     Node* LLRotation(Node* p);
@@ -21,11 +21,30 @@ public:
     Node* GetRoot();
 };
 
+// constructor
+AVL::AVL()
+{
+    root = NULL;
+}
+
+// InOrder traversal shortcut
 void AVL::InOrder()
 {
     InOrder(root);
 }
 
+// InOrder traversal implemented
+void AVL::InOrder(Node* p)
+{
+    if (p)
+    {
+        InOrder(p->lChild);
+        cout << p->data << " ";
+        InOrder(p->rChild);
+    }
+}
+
+// getter for root
 Node* AVL::GetRoot()
 {
     return root;
@@ -57,9 +76,11 @@ Node* AVL::Insert(Node* p, int key)
     {
         q = new Node;
         q->data = key;
-        q->lChild = q->rChild = NULL;
+        q->lChild = NULL;
+        q->rChild = NULL;
         // using 1 based height for simplicity
         q->height = 1;
+        return q;
     }
     // if key is greater than root->data
     if (key > p->data)
