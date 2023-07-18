@@ -28,3 +28,21 @@ void AVL::InOrder() {
 Node* AVL::GetRoot() {
     return root;
 }
+
+// gets the Height of the passed node
+int AVL::NodeHeight(Node* p)
+{
+    int hl, hr;
+    hl = (p != NULL && p->lChild != NULL) ? p->lChild->height : 0;
+    hr = (p != NULL && p->rChild != NULL) ? p->rChild->height : 0;
+    return (hl < hr) ? hr + 1 : hl + 1;
+}
+
+// gets the Balance Factor of the passed node
+int AVL::BalanceFactor(Node* p)
+{
+    int hl, hr;
+    hl = (p != NULL && p->lChild != NULL) ? p->lChild->height : 0;
+    hr = (p != NULL && p->rChild != NULL) ? p->rChild->height : 0;
+    return hl - hr;
+}
