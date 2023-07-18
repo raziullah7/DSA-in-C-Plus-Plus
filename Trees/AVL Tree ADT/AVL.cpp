@@ -21,11 +21,13 @@ public:
     Node* GetRoot();
 };
 
-void AVL::InOrder() {
+void AVL::InOrder()
+{
     InOrder(root);
 }
 
-Node* AVL::GetRoot() {
+Node* AVL::GetRoot()
+{
     return root;
 }
 
@@ -45,4 +47,64 @@ int AVL::BalanceFactor(Node* p)
     hl = (p != NULL && p->lChild != NULL) ? p->lChild->height : 0;
     hr = (p != NULL && p->rChild != NULL) ? p->rChild->height : 0;
     return hl - hr;
+}
+
+Node* AVL::Insert(Node* p, int key)
+{
+    Node* q;
+    // if there is no root
+    if (p == NULL)
+    {
+        q = new Node;
+        q->data = key;
+        q->lChild = q->rChild = NULL;
+        // using 1 based height for simplicity
+        q->height = 1;
+    }
+    // if key is greater than root->data
+    if (key > p->data)
+        p->rChild = Insert(p->rChild, key);
+    else if (key < p->data) 
+        p->lChild = Insert(p->lChild, key);
+    
+    // as the key was not NULL, we need to find height
+    p->height = NodeHeight(p);
+
+    // not to check the case of LLRotation
+    if (BalanceFactor(p) == 2 && BalanceFactor(p->lChild) == 1)
+    {
+        return LLRotation(p);
+    }
+
+    // otherwise simply return p
+    return p;
+
+}
+
+Node* AVL::LLRotation(Node* p)
+{
+    // pl is left child of p
+    Node* pl = p->lChild;
+    // plr is the right child of pl
+    Node* plr = pl->rChild;
+
+    // performing rotation (pl becomes new root element)
+    pl->rChild = p;
+    // right child of pl becomes left child of p
+    p->lChild = plr;
+
+    // reevaluate height of p
+    p->height = NodeHeight(p);
+    //reevaluate height of pl
+    pl->height = NodeHeight(pl);
+
+    // the passed node p may be the root of the entire tree
+    if (root == p)
+    {
+        root = pl;
+    }
+
+    // return the address of new root
+    return pl;
+
 }
