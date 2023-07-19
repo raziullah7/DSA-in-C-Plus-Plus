@@ -106,6 +106,11 @@ Node* AVL::Insert(Node* p, int key)
     {
         return LRRotation(p);
     }
+    // check the case of LRRotation
+    else if (BalanceFactor(p) == -2 && BalanceFactor(p->lChild) == 1)
+    {
+        return RLRotation(p);
+    }
     // otherwise simply return p
     return p;
 
@@ -198,4 +203,39 @@ Node* AVL::LRRotation(Node* p)
 
     // return the address of new root
     return plr;
+}
+
+Node* AVL::RLRotation(Node* p)
+{
+    // pr is right child of p
+    Node* pr = p->rChild;
+    // prl is the left child of pr
+    Node* prl = pr->lChild;
+
+    // performing 1st rotation (re-assigning plr's children)
+    // left child of plr becomes right child of pl
+    pr->lChild = prl->rChild;
+    // right child of plr becomes left child of p
+    p->rChild = prl->lChild;
+
+    // performing 2nd rotation (pr becomes new root element)
+    prl->lChild = p;
+    // left child of pr becomes right child of p
+    prl->rChild = pr;
+
+    // re-evaluate height of p
+    pr->height = NodeHeight(pr);
+    //re-evaluate height of pr
+    p->height = NodeHeight(p);
+    //re-evaluate height of prl
+    prl->height = NodeHeight(prl);
+
+    // the passed node p may be the root of the entire tree
+    if (root == p)
+    {
+        root = prl;
+    }
+
+    // return the address of new root
+    return prl;
 }
